@@ -3,7 +3,6 @@ package com.bayin.hencoder.view;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -11,7 +10,7 @@ import android.widget.LinearLayout;
 import com.bayin.hencoder.R;
 
 /****************************************
- * 功能说明:  
+ * 功能说明:
  *
  * Author: Created by bayin on 2017/10/13.
  ****************************************/
@@ -37,11 +36,18 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
         setOnClickListener(this);
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+    }
+
     /**
      * 点赞
      */
     public void thumbsUp() {
         mThumbview.thumbsUp();
+        mNumberView.numberAdd();
     }
 
     /**
@@ -49,6 +55,7 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
      */
     public void thumbsCancel() {
         mThumbview.thumbsCancel();
+        mNumberView.numberReduce();
     }
 
     /**
@@ -69,8 +76,8 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (isChecked()){
-            mThumbview.thumbsCancel();
-        }else mThumbview.thumbsUp();
+        if (isChecked()) {
+            thumbsCancel();
+        } else thumbsUp();
     }
 }

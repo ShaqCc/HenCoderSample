@@ -44,6 +44,11 @@ public class NumberView extends LinearLayout {
         }
     }
 
+    /**
+     * 设置赞数
+     *
+     * @param number
+     */
     private void setThumbNumber(int number) {
         this.mThumbNumber = number;
         refreshView();
@@ -52,19 +57,22 @@ public class NumberView extends LinearLayout {
     /**
      * 赞增加
      */
-    public void thumbAdd() {
+    public void numberAdd() {
         synchronized (NumberView.class) {
             mThumbNumber++;
+            int childCount = getChildCount();
+            getChildAt(childCount-1).animate().alpha(0f).translationYBy(-50).setDuration(2000);
         }
     }
 
     /**
      * 赞减少
      */
-    public void thumbReduce() {
+    public void numberReduce() {
         synchronized (NumberView.class) {
             if (mThumbNumber == 0) return;
             mThumbNumber--;
+            refreshView();
         }
     }
 }
