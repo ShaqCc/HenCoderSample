@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context="com.bayin.hencoder.MainActivity">
 
     <com.bayin.hencoder.view.ThumbLayout
-        android:id="@+id/thumbLayout"
-        android:layout_gravity="center"
+        android:id="@+id/thumbLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-</FrameLayout>
+    <com.bayin.hencoder.view.ThumbLayout
+        android:id="@+id/thumbLayout2"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.bayin.hencoder.view.ThumbLayout
+        android:id="@+id/thumbLayout3"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"/>
+
+    <com.bayin.hencoder.view.ThumbLayout
+        android:id="@+id/thumbLayout4"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"/>
+
+    <com.bayin.hencoder.view.ThumbLayout
+        android:id="@+id/thumbLayout5"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

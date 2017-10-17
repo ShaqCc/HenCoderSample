@@ -18,7 +18,7 @@ import com.bayin.hencoder.R;
 public class ThumbLayout extends LinearLayout implements View.OnClickListener {
 
     private ThumbView mThumbview;
-    private NumberView mNumberView;
+    private NumberLayout mNumberView;
 
     public ThumbLayout(Context context) {
         this(context, null);
@@ -32,14 +32,8 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
         super(context, attrs, defStyleAttr);
         LayoutInflater.from(context).inflate(R.layout.give_thumbsup_layout, this, true);
         mThumbview = (ThumbView) findViewById(R.id.ThumbView);
-        mNumberView = (NumberView) findViewById(R.id.NumberView);
+        mNumberView = (NumberLayout) findViewById(R.id.NumberView);
         setOnClickListener(this);
-    }
-
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
     }
 
     /**
@@ -47,7 +41,7 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
      */
     public void thumbsUp() {
         mThumbview.thumbsUp();
-        mNumberView.numberAdd();
+        mNumberView.thumbsAdd();
     }
 
     /**
@@ -55,7 +49,7 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
      */
     public void thumbsCancel() {
         mThumbview.thumbsCancel();
-        mNumberView.numberReduce();
+        mNumberView.thumbsReduce();
     }
 
     /**
@@ -65,6 +59,10 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
      */
     public void setChecked(boolean check) {
 
+    }
+
+    public void setNumber(int number) {
+        mNumberView.setNumber(number);
     }
 
     /**

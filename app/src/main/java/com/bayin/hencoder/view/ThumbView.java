@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import com.bayin.hencoder.R;
 
 /****************************************
- * 功能说明:  
+ * 功能说明:  大拇指view
  *
  * Author: Created by bayin on 2017/10/13.
  ****************************************/
