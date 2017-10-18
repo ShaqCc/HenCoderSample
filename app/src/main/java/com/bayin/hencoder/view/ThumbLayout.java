@@ -58,7 +58,8 @@ public class ThumbLayout extends LinearLayout implements View.OnClickListener {
      * @param check 是否点赞
      */
     public void setChecked(boolean check) {
-
+        mThumbview.setChecked(check);
+        mNumberView.setChecked(check);
     }
 
     public void setNumber(int number) {

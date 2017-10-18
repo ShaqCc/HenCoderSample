@@ -47,10 +47,15 @@ public class NumberLayout extends FrameLayout {
 
     public void setChecked(boolean checked) {
         isChecked = checked;
-        if (isChecked())
-            refreshView(mBelowLayout, number - 1);
-        else
+        if (checked) {
+            refreshView(mBelowLayout, number);
+            refreshView(mAboveLayout, number - 1);
+            setChildVisible(mAboveLayout, false);
+        } else {
+            refreshView(mAboveLayout, number);
             refreshView(mBelowLayout, number + 1);
+            setChildVisible(mBelowLayout, false);
+        }
     }
 
     public NumberLayout(@NonNull Context context) {
@@ -66,15 +71,12 @@ public class NumberLayout extends FrameLayout {
         LayoutInflater.from(context).inflate(R.layout.number_layout, this, true);
         mAboveLayout = (LinearLayout) findViewById(R.id.ll_above);
         mBelowLayout = (LinearLayout) findViewById(R.id.ll_below);
-
         init();
-        initAnimation();
     }
 
     private void init() {
-        refreshView(mAboveLayout, number);
         setChecked(isChecked());
-        setChildVisible(mBelowLayout, false);
+        initAnimation();
     }
 
     /**

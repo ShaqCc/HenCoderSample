@@ -22,5 +22,7 @@ public class MainActivity extends AppCompatActivity {
         thumbsLayout3.setNumber(99);
         thumbsLayout4.setNumber(1029);
         thumbsLayout5.setNumber(9999);
+
+        thumbsLayout2.setChecked(true);
     }
 }

@@ -57,20 +57,6 @@ public class ThumbView extends FrameLayout {
             }
         });
         mThumbLightView = (ImageView) findViewById(R.id.iv_thumblight);
-//        mCheckBox.setOnTouchListener(new OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                switch (event.getAction()){
-//                    case MotionEvent.ACTION_DOWN:
-//                        scaleSmall(v);
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        scaleBig(v);
-//                        break;
-//                }
-//                return false;
-//            }
-//        });
     }
 
     private void initAnimation() {
@@ -79,27 +65,6 @@ public class ThumbView extends FrameLayout {
 
         mAppearAnim = ObjectAnimator.ofFloat(mThumbLightView, "alpha", 0f, 1f);
         mAppearAnim.setDuration(100);
-//        mAppearAnim.addListener(new Animator.AnimatorListener() {
-//            @Override
-//            public void onAnimationStart(Animator animation) {
-//                mThumbLightView.setVisibility(VISIBLE);
-//            }
-//
-//            @Override
-//            public void onAnimationEnd(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationCancel(Animator animation) {
-//
-//            }
-//
-//            @Override
-//            public void onAnimationRepeat(Animator animation) {
-//
-//            }
-//        });
         mDismissAnim = ObjectAnimator.ofFloat(mThumbLightView, "alpha", 1f, 0f);
         mDismissAnim.setDuration(100);
 
@@ -148,5 +113,9 @@ public class ThumbView extends FrameLayout {
      */
     public boolean isChecked() {
         return mCheckBox.isChecked();
+    }
+
+    public void setChecked(boolean isCheck){
+        mCheckBox.setChecked(isCheck);
     }
 }
