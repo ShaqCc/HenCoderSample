@@ -16,6 +16,13 @@ import com.bayin.hencoder.R;
 import com.bayin.hencoder.Utils;
 
 /**
+ * 
+ *
+ *
+ *  该类没用到
+ *
+ *
+ *
  * Created by Administrator on 2017/10/18.
  */
 
